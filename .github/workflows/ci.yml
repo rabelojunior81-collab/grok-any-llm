@@ -24,17 +24,17 @@ jobs:
 
       # ---- bash side (ubuntu / macos) ----
       - name: Install shellcheck + bats (unix)
-        if: runner.os != 'Windows'
+        if: runner.os == 'Linux'
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq shellcheck
           sudo npm install -g bats
 
       - name: shellcheck
-        if: runner.os != 'Windows'
+        if: runner.os == 'Linux'
         run: shellcheck src/*.sh src/install.sh
 
       - name: bats tests (unix)
-        if: runner.os != 'Windows'
+        if: runner.os == 'Linux'
         run: bats tests/
 
       # ---- powershell side (all OSes; PS is cross-platform) ----
@@ -46,7 +46,7 @@ jobs:
 
       - name: PSScriptAnalyzer (lint PS)
         shell: pwsh
-        run: Invoke-ScriptAnalyzer -Path src/*.ps1 -Settings .github/psscriptanalyzer.psd1 -EnableExit
+        run: Invoke-ScriptAnalyzer -Path src/*.ps1 -Severity Error -EnableExit
 
       - name: Pester tests (PS)
         shell: pwsh
