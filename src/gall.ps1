@@ -45,8 +45,11 @@ while ($i -lt $Args.Count) {
 }
 
 function Write-Telemetry([string]$prov, [string]$model, [string]$outcome) {
-  $sink = Join-Path $env:USERPROFILE '.grok-any-llm\.telemetry\gall.jsonl'
-  if (-not (Test-Path (Split-Path $sink))) { return }
+  $homeDir = [Environment]::GetFolderPath('UserProfile')   # cross-platform (USERPROFILE nulo no PS unix)
+  if (-not $homeDir) { return }
+  $sink = Join-Path $homeDir '.grok-any-llm' '.telemetry' 'gall.jsonl'
+  $dir = Split-Path $sink
+  if (-not (Test-Path $dir)) { return }   # telemetria off por default (dir ausente)
   $ts = (Get-Date).ToString('yyyy-MM-ddTHH:mm:ss-03:00')
   $rec = @{ ts=$ts; harness='gall'; llm=$model; model=$model; provider=$prov; session=$PID; outcome=$outcome } | ConvertTo-Json -Compress
   Add-Content -Path $sink -Value $rec -Encoding utf8
