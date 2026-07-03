@@ -27,9 +27,8 @@ Describe 'gall.ps1 arg parsing' {
 
   It 'erro claro quando key do provider ausente' {
     Remove-Item Env:\OPENCODE_GO_API_KEY -ErrorAction SilentlyContinue
-    # garantir que nao ha heranca user-level no processo de teste
     $out = & $script:gall oc --dry-run 2>&1
-        $LASTEXITCODE | Should -Be 3
+    $LASTEXITCODE | Should -Be 3
     ($out -join ' ') | Should -Match 'OPENCODE_GO_API_KEY'
   }
 }

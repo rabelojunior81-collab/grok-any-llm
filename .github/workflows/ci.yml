@@ -46,7 +46,7 @@ jobs:
 
       - name: PSScriptAnalyzer (lint PS)
         shell: pwsh
-        run: Invoke-ScriptAnalyzer -Path src/*.ps1 -Severity Error,Warning -EnableExit
+        run: Invoke-ScriptAnalyzer -Path src/*.ps1 -Settings .github/psscriptanalyzer.psd1 -EnableExit
 
       - name: Pester tests (PS)
         shell: pwsh
