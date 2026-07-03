@@ -1,0 +1,31 @@
+# Secrets — nunca commitear
+.env
+.env.*
+*.key
+*.pem
+auth.json
+.grok/auth.json
+.grok/
+
+# Telemetry local (sink JSONL, off default)
+.telemetry/*.jsonl
+!.telemetry/.gitkeep
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build/runtime
+node_modules/
+dist/
+build/
+*.log
+
+# Test artifacts
+tests/*.trx
+tests/TestResults/

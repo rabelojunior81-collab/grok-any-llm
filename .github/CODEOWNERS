@@ -1,0 +1,16 @@
+# CODEOWNERS — default reviewers for grok-any-llm
+# Cada PR precisa de aprovação de um owner antes do merge (main protegida).
+
+* @rabelojunior81-collab
+
+# Shims e profiles — sensíveis (lidam com auth env vars)
+/src/          @rabelojunior81-collab
+/profiles/     @rabelojunior81-collab
+
+# Landing (DNA visual)
+/landing/      @rabelojunior81-collab
+
+# CI / governance
+/.github/      @rabelojunior81-collab
+/AGENTS.md     @rabelojunior81-collab
+/SECURITY.md   @rabelojunior81-collab

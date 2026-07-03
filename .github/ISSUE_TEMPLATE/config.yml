@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Reportar vulnerabilidade de segurança
+    url: https://github.com/rabelojunior81-collab/grok-any-llm/blob/main/SECURITY.md
+    about: "NÃO abra issue público. Use o canal privado (rabelo.work@gmail.com)."
+  - name: 💬 Discussão / dúvida
+    url: https://github.com/rabelojunior81-collab/grok-any-llm/discussions
+    about: Perguntas e ideias vão nas Discussions.
+  - name: 🏛 Rabelus Lab
+    url: https://rabelus.xyz
+    about: Sobre o laboratório por trás do projeto.

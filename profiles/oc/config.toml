@@ -1,0 +1,53 @@
+# Perfil OpenCode Go (subscription) — auto-contido.
+# XAI_API_KEY (env, setada pelo gall) = key do OpenCode Go.
+# Endpoint: https://opencode.ai/zen/go/v1 (subscription; chunk de custo pos-[DONE] ignoravel).
+# Nao usa [endpoints] (o catalog /zen/go/v1/models pode nao servir); rely em entries oc-*.
+[models]
+default = "oc-glm-52"
+
+[model.grok-build]
+model = "glm-5.2"
+base_url = "https://opencode.ai/zen/go/v1"
+api_backend = "chat_completions"
+
+[model.oc-glm-52]
+model = "glm-5.2"
+base_url = "https://opencode.ai/zen/go/v1"
+name = "GLM 5.2 (OpenCode Go)"
+api_backend = "chat_completions"
+context_window = 128000
+
+[model.oc-glm-51]
+model = "glm-5.1"
+base_url = "https://opencode.ai/zen/go/v1"
+name = "GLM 5.1 (OpenCode Go)"
+api_backend = "chat_completions"
+context_window = 128000
+
+[model.oc-kimi-k27]
+model = "kimi-k2.7-code"
+base_url = "https://opencode.ai/zen/go/v1"
+name = "Kimi K2.7 Code (OpenCode Go)"
+api_backend = "chat_completions"
+context_window = 128000
+
+[model.oc-ds-v4pro]
+model = "deepseek-v4-pro"
+base_url = "https://opencode.ai/zen/go/v1"
+name = "DeepSeek V4 Pro (OpenCode Go)"
+api_backend = "chat_completions"
+context_window = 128000
+
+[model.oc-minimax-m3]
+model = "minimax-m3"
+base_url = "https://opencode.ai/zen/go/v1"
+name = "MiniMax M3 (OpenCode Go)"
+api_backend = "chat_completions"
+context_window = 128000
+
+[model.oc-grok-build]
+model = "grok-build-0.1"
+base_url = "https://opencode.ai/zen/go/v1"
+name = "Grok Build 0.1 (OpenCode Go)"
+api_backend = "chat_completions"
+context_window = 128000

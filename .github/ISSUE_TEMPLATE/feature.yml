@@ -1,0 +1,42 @@
+name: ✨ Feature request
+description: Sugira uma feature para o grok-any-llm/gall
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema que resolve
+      placeholder: "Estou frustrado quando..."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solução proposta
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+    validations:
+      required: false
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Escopo
+      options:
+        - Novo provider
+        - Shim (gall.ps1/gall.sh)
+        - Instalador / TUI
+        - Landing / docs
+        - Telemetria / benchmark
+        - Governança
+    validations:
+      required: false
+  - type: checkboxes
+    id: willing
+    attributes:
+      label: Disposto a contribuir com um PR?
+      options:
+        - label: Sim, posso abrir um PR

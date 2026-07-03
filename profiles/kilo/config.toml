@@ -1,0 +1,12 @@
+# Perfil Kilo Gateway — auto-contido, clean-machine-safe.
+# XAI_API_KEY (env, setada pelo gall) = Bearer (a key do Kilo).
+# Endpoint: https://kilo.ai/gateway · 500+ modelos sem markup.
+[endpoints]
+models_base_url = "https://api.kilo.ai/api/gateway"
+
+[models]
+default = "z-ai/glm-5.2"
+
+[model.grok-build]
+model = "z-ai/glm-5.2"
+api_backend = "chat_completions"

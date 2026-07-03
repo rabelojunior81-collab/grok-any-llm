@@ -1,0 +1,20 @@
+# ~/.grok/config.toml — DEFAULT persistente do grok-any-llm.
+# Este e o estado usado por `grok` (sem o gall). Copie para ~/.grok/config.toml.
+# Modo api_key_auth: XAI_API_KEY (env user) -> Bearer -> sem gate de subscription.
+
+[endpoints]
+models_base_url = "https://openrouter.ai/api/v1"
+
+[models]
+default = "x-ai/grok-build-0.1"
+
+# Override do grok-build (silencia o 400 de chamadas internas do planner).
+[model.grok-build]
+model = "x-ai/grok-build-0.1"
+api_backend = "chat_completions"
+
+# --- env vars user-level necessarias (fora do repo) ---
+# XAI_API_KEY        = <sua key OpenRouter>   (Bearer + dispara api_key_auth)
+# OPENROUTER_API_KEY = <mesma key>            (alias, se necessario)
+# KILO_API_KEY       = <sua key Kilo Gateway>
+# OPENCODE_GO_API_KEY= <sua key OpenCode Go>

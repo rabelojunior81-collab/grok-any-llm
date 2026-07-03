@@ -1,0 +1,13 @@
+# Perfil OpenRouter — auto-contido, clean-machine-safe.
+# XAI_API_KEY (env, setada pelo gall) = Bearer para todos os modelos deste perfil.
+[endpoints]
+models_base_url = "https://openrouter.ai/api/v1"
+
+[models]
+default = "x-ai/grok-build-0.1"
+
+# Override: redireciona chamadas internas do planner (grok-build + responses)
+# para um modelo valido no OpenRouter via chat_completions (silencia o 400).
+[model.grok-build]
+model = "x-ai/grok-build-0.1"
+api_backend = "chat_completions"
