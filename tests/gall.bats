@@ -3,7 +3,7 @@
 # License: MIT (c) 2026 Adilson Rabelo Junior / Rabelus Lab
 
 setup() {
-  GALL="$BATS_CWD/../../src/gall.sh" 2>/dev/null || GALL="$PWD/../src/gall.sh"
+  GALL="$BATS_TEST_DIRNAME/../src/gall.sh"
   export FAKE_KEY="sk-fake-test-key-1234567890"
 }
 
