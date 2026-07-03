@@ -17,9 +17,9 @@ $ErrorActionPreference = 'Stop'
 
 function Out-Diag([string]$msg) { Write-Output $msg }  # stdout (capturavel; diagnósticos só em dry-run/erros pré-grok)
 
-# --- resolve repo/instalacao ---
+# --- resolve repo/instalacao (cross-platform) ---
 $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$profilesRoot = Join-Path $scriptRoot '..\profiles' | Resolve-Path -ErrorAction SilentlyContinue
+$profilesRoot = (Resolve-Path (Join-Path $scriptRoot '..' 'profiles') -ErrorAction SilentlyContinue).Path
 if (-not $profilesRoot) { $profilesRoot = Join-Path $scriptRoot 'profiles' }
 
 # --- mapa de providers ---
